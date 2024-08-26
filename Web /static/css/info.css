@@ -1,0 +1,214 @@
+/* Resetting default margin and padding for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background-color:white;
+}
+
+
+header {
+    border: 2px solid black;
+    box-shadow: 0px 0px 15px white;
+    margin: 8px 34px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 95%;
+    padding: 10px 59px;
+    background: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+    border-radius: 12px;
+}
+
+
+
+/* logo style for image */
+h2.logo {
+    text-align: center; /* Center the image horizontally */
+}
+
+h2.logo img {
+    width: 424px; /* Set the width of the image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Add rounded corners to the image */
+    box-shadow: 2px 2px 5px red; /* Add a subtle shadow effect */
+}
+
+/* design for class : navigation items */
+.navigation a{
+    position: relative;
+    font-size: 1.7em;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+/*create an underline effect on links within a class : navigation for links*/
+.navigation a::after{
+    content: '';
+    position:absolute;
+    width: 100%;
+    height: 3px;
+    left: 0;
+    bottom: -6px;
+    background: white;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform .5s;
+}
+
+.navigation a:hover:after{
+    transform-origin: left;
+    transform: scaleX(1);
+    
+}
+
+/* style for login button in class : navigation */
+.navigation .btn_Login_Popup{
+    width: 87px;
+    height: 34px;
+    background: red;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: white;
+    margin-left: 40px;
+    transition: .5s;
+}
+
+/* style for SignUp button in class : navigation  */
+.navigation .btn_Signup_Popup{    
+    width: 87px;
+    height: 34px;
+    background: red;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: white;
+    margin-left: 40px;
+    transition: .5s;
+}
+
+.navigation .btn_Login_Popup:hover{
+    background: white;
+    color: black;
+
+}
+.navigation .btn_Signup_Popup:hover{
+    background: white;
+    color: black;
+}
+
+
+
+
+
+
+
+
+
+.cus-container{
+    background-image: url(../images/black.jpg);
+    background-size: cover;
+    padding: 30px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 83vh;
+}
+.developers{
+    background-image: url(../images/black5.jpg);
+    background-size: cover;
+    padding: 30px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 83vh;
+}
+.about{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width:40%;
+    height: 100%;
+    margin: 50px 0px 0px 60px;
+}
+
+.about p{
+    font-size: 23px;
+    font-family: sans-serif;
+    color: white;
+}
+
+.sir{
+    color: white;
+    margin: 0px 191px 0px 0px;
+}
+
+.sir h1{
+    font-size: 40px;
+    text-align: center;
+}
+.sir figcaption{
+    background-color: white !important;
+    color: black !important;
+    padding: 5px;
+    font-size: 24px;
+    text-align: center;
+}
+.sir img{
+    width: auto;
+    height: 313px;
+}
+
+
+.daniyal figcaption{
+    font-size: 24px;
+    font-family: sans-serif;
+    color: white;
+    text-align: center;
+}
+
+.about h1{
+    font-size: 60px;
+    font-family:sans-serif
+}
+
+.daniyal img{
+    height: 200px;
+    border-radius: 222px;
+    border: 3px solid white;
+}
+
+.daniyal{
+    margin-right: 20px;
+}
+
+.images{
+    display: flex;
+    margin-right: 100px;
+}
+
+.contact{
+    padding: 40px;
+    padding-left: 100px;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    color: white;
+}
+

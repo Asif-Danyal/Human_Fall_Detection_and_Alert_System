@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Human Fall Detection /& Alert System</title>
+    <link rel="stylesheet" type="text/css" href="static/css/home.css" />
+    <!-- <link rel="stylesheet" href="home.css"> -->
+  </head>
+
+  <body>
+    <header>
+      <!--<h2 class="logo">Logo</h2>-->
+      <h2 class="logo"><img src="static/images/logo.png" alt="Logo" /></h2>
+      <nav class="navigation">
+        <a href="#">Home</a>
+        <a href="{{url_for('info')}}">Info</a>
+        <!-- <button class="btn_Login_Popup">Login</button>
+        <button class="btn_Signup_Popup">Sign Up</button> -->
+      </nav>
+    </header>
+
+    <div
+      class="login-wrapper {% if form_type == 'login' %}active-popup{% endif %}"
+    >
+      <!-- cross option on top right corner of login box-->
+      <span class="icon-close"><ion-icon name="close"></ion-icon></span>
+
+      <!-- Login form -->
+      <div class="form-box login">
+        <h2>Login</h2>
+        {% if form_type == 'login' %} {% with messages =
+        get_flashed_messages(with_categories=true) %} {% if messages %}
+        <ul class="flashes">
+          {% for category, message in messages %}
+          <li class="{{ category }}">{{ message }}</li>
+          {% endfor %}
+        </ul>
+        {% endif %} {% endwith %} {% endif %}
+        <form action="/login" method="POST">
+          <div class="input-box">
+            <!-- Login form fields (e.g., username, password) would go here -->
+            <span class="icon"><ion-icon name="mail"></ion-icon></span>
+            <input type="email" id="email" name="email" placeholder=" " required />
+            <label>Email</label>
+          </div>
+
+          <div class="input-box">
+            <!-- Login form fields (e.g., username, password) would go here -->
+            <span class="icon"><ion-icon name="lock"></ion-icon></span>
+            <input type="password" id="password" name="password" placeholder=" " required />
+            <label>Password</label>
+          </div>
+
+          <div class="remember-forgot">
+            <!-- Login form fields (e.g., username, password) would go here -->
+            <label><input type="checkbox" />Remember me</label>
+            <a href="#">Forgot Password?</a>
+          </div>
+
+          <button type="submit" class="btn" value="Login">Login</button>
+
+          <div class="login-register">
+            <p>
+              Don't have an account?
+              <a href="#" class="register-link">Register</a>
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div
+      class="register-wrapper {% if form_type == 'register' %}active-popup{% endif %}"
+    >
+      <!-- cross option on top right corner of login box-->
+      <span class="icon-close"><ion-icon name="close"></ion-icon></span>
+
+      <!-- Registration form -->
+      <div class="form-box register">
+        <h2>Registration</h2>
+        {% if form_type == 'register' %} {% with messages =
+        get_flashed_messages(with_categories=true) %} {% if messages %}
+        <ul class="flashes">
+          {% for category, message in messages %}
+          <li class="{{ category }}">{{ message }}</li>
+          {% endfor %}
+        </ul>
+        {% endif %} {% endwith %} {% endif %}
+        <form action="/register" method="POST">
+          <div class="input-box">
+            <!-- Login form fields (e.g., username, email, password) would go here -->
+            <span class="icon"> <ion-icon name="person"></ion-icon> </span>
+            <input
+              type="text"
+              name="username"
+              id="username"
+              placeholder=" "
+              required
+            />
+            <label>Username</label>
+          </div>
+
+          <div class="input-box">
+            <!-- Login form fields (e.g., username, password) would go here -->
+            <span class="icon"> <ion-icon name="mail"></ion-icon> </span>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder=" "
+              required
+            />
+            <label>Email</label>
+          </div>
+
+          <div class="input-box">
+            <!-- Login form fields (e.g., username, password) would go here -->
+            <span class="icon"> <ion-icon name="lock"></ion-icon> </span>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder=" "
+              required
+            />
+            <label>Password</label>
+          </div>
+
+          <div class="remember-forgot">
+            <!-- Login form fields (e.g., username, password) would go here -->
+            <label
+              ><input type="checkbox"  required/>I agree to the terms /&
+              conditions</label
+            >
+          </div>
+
+          <button type="submit" class="btn" value="Register">Register</button>
+
+          <div class="login-register">
+            <p>
+              Already have an account? <a href="#" class="login-link">Login</a>
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <main>
+      <section class="welcome">
+        <h1>
+          Human Fall Detection and Alert
+          System
+        </h1>
+        <p>
+          Ensuring Safety and Peace of Mind At SafeFall, we prioritize the
+          well-being and safety of your loved ones. Our advanced Human Fall
+          Detection and Alert System is designed to provide real-time monitoring
+          and immediate alerts in case of falls, ensuring timely assistance and
+          peace of mind.
+        </p>
+        <div class="btn1">
+        <button type="submit" class="btn-login">Login</button>
+        <button type="submit" class="btn-signup">Sign Up</button>
+      </div>
+      </section>
+      <section class="welcome-pics">
+          <img src="/static/images/mybg.png" alt="">
+      </section>
+    </main>
+
+    <script src="home.js"></script>
+    <script
+      type="text/javascript"
+      src="{{url_for('static', filename='script/home.js')}}"
+    ></script>
+    <!-- this script is used for using icons from ionicons without installation -->
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+
+    <!-- for including php in php file <?php include("static/php/database_connection.php") ?> -->
+  </body>
+</html>

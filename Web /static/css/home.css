@@ -1,0 +1,433 @@
+/* Resetting default margin and padding for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root{
+    --p1:#fffa90;
+    --p2:#b077ba;
+    --p3:#a4ffaa;
+    --p4:#a6cbff;
+    --p5:#ff9090;
+    --header-background: black;
+}
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('/static/images/black.jpg') ;
+    background-size: cover;
+    /* background-color: #fffa90; */
+}
+
+/* --------------------Header------------------------ */
+
+header {
+    box-shadow: 0px 0px 15px white;
+    border: 2px solid black;
+    margin: 8px 34px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 95%;
+    padding: 10px 59px;
+    background: var(--header-background);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+    border-radius: 12px;
+}
+
+
+
+/* logo style for image */
+h2.logo {
+    text-align: center; /* Center the image horizontally */
+}
+
+h2.logo img {
+    width: 424px; /* Set the width of the image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Add rounded corners to the image */
+    box-shadow: 2px 2px 5px red; /* Add a subtle shadow effect */
+}
+
+/* design for class : navigation items */
+.navigation a{
+    position: relative;
+    font-size: 1.7em;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+/*create an underline effect on links within a class : navigation for links*/
+.navigation a::after{
+    content: '';
+    position:absolute;
+    width: 100%;
+    height: 3px;
+    left: 0;
+    bottom: -6px;
+    background: white;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform .5s;
+}
+
+.navigation a:hover:after{
+    transform-origin: left;
+    transform: scaleX(1);
+    
+}
+
+/* style for login button in class : navigation */
+.navigation .btn_Login_Popup{
+    width: 87px;
+    height: 34px;
+    background: red;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: white;
+    margin-left: 40px;
+    transition: .5s;
+}
+
+/* style for SignUp button in class : navigation  */
+.navigation .btn_Signup_Popup{    
+    width: 87px;
+    height: 34px;
+    background: red;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: white;
+    margin-left: 40px;
+    transition: .5s;
+}
+
+.navigation .btn_Login_Popup:hover{
+    background: white;
+    color: black;
+
+}
+.navigation .btn_Signup_Popup:hover{
+    background: white;
+    color: black;
+}
+
+/* when login button is pressed login page appears*/
+.login-wrapper.active-popup{
+    transform: scale(1);
+}
+
+/* class : login over all structure */
+.login-wrapper{
+    position: absolute;
+    top: 20%;
+    /* left: 50%; */
+    transform: translate(-50%, -50%); 
+
+    width: 400px;
+    height: 474px;
+    background: white;
+    border: 2px, solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+
+     overflow: hidden; 
+     transform: scale(0);
+     transition: transform .5s ease, height .2s ease; 
+}
+
+/* cross option on top right corner of class : login box*/
+.login-wrapper .icon-close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: #162938;
+    /* style of cross option */
+    font-size: 2em;
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    /* corner of cross option make round inside of login-box*/
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+
+.login-wrapper .form-box{
+    width: 100%;
+    padding: 40px;
+    padding-top: 60px;
+}
+
+.login-wrapper.active.form-box .LogIn{
+    transition: none;
+    transform: translateX(-400px);
+}
+
+/* when register button is pressed register page appears*/
+.register-wrapper.active-popup{
+    transform: scale(1);
+}
+
+/* class : register over all structure */
+.register-wrapper{
+    position: absolute;
+    top: 20%;
+    /* left: 50%; */
+    transform: translate(-50%, -50%); 
+    padding: 23px;
+  
+    width: 400px;
+    height: 500px;
+    background: white;
+    border: 2px, solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+
+     overflow: hidden; 
+     transform: scale(0);
+     transition: transform .5s ease, height .2s ease; 
+}
+
+/* cross option on top right corner of class : register box*/
+.register-wrapper .icon-close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: #162938;
+    /* style of cross option */
+    font-size: 2em;
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    /* corner of cross option make round inside of login-box*/
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+/* main title for form which apperas login or register */
+.form-box h2{
+    font-size: 2em;
+    color: #162938;
+    text-align: center;
+} 
+
+/* class in which input fields are enclosed */
+.input-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid #162938;
+    margin: 30px 0;
+}
+
+/* label field inside of class : inputBox */
+.input-box label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #162938;
+    font-weight: 500;
+    pointer-events: none;
+    /* when input field is selected label moves upward slowly using time of 0.5sec */
+    transition: .5s;
+}
+
+/* when input field is selected label moves upward */
+.input-box input:focus~label{
+    top: -5px;
+}
+
+.input-box input:not(:placeholder-shown)~label{
+    top: -5px
+}
+
+/* input field inside of class :  inputBox */
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    /* it makes the input text in password & email field */
+    font-size: 1em;
+    color: #162938;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+
+/* icon used in input field */
+.input-box .icon{
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: #162938;
+    line-height: 57px;
+}
+
+/* class : remember forgot  style and spaceing from remember me*/
+.remember-forgot{
+    font-size: .9em;
+    color: #162938;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* padding of label : remember me from input : checkbox*/
+.remember-forgot label input{
+    accent-color: #162938;
+    margin-right: 3px;
+}
+
+/* in rember-forgot class style and underline option for forgot-Password link*/
+.remember-forgot a{
+    color: #162938;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover{
+    text-decoration: underline;
+}
+
+/* submit login / register button design*/
+.btn{
+    width: 100%;
+    height: 45px;
+    background: black;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+
+/* submit login / register button color*/
+    font-size: 1em;
+    font-weight: 500;
+    color: white;
+}
+
+/* design of class : login-register which encloses register & login links */
+.login-register{
+    font-size: .9em;
+    font-weight: 500;
+    color: black;
+    text-align: center;
+    margin: 25px 0 10px;
+}
+
+/* design of register & login link in login-register class*/
+.login-register p a{
+    color: #162938;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-register p a:hover{
+    text-decoration: underline;
+}
+
+
+
+.flashes {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.flashes li {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.flashes li.success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.flashes li.danger {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+main{
+    margin-left: 40px;
+    padding: 22px;
+    display: flex;
+}
+
+.welcome{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin-right: 10px;
+    border-radius: 20px;
+}
+
+.welcome h1{
+    padding: 0px 17px;
+    color: white;
+    font-family: sans-serif;
+    font-size: 65px;
+}
+
+.welcome p{
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+    padding: 23px;
+    border-radius: 24px;
+    margin-top: 20px;
+}
+
+.welcome .btn1{
+    display: flex;
+    justify-content: space-around;
+}
+
+.welcome .btn1 button{
+    padding: 40px 80px;
+    background: white;
+    border: none;
+    outline: none;
+    border-radius: 200px;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: 500;
+    color: black;
+}
+
+.welcome .btn1 button:hover{
+    background: red;
+    color: white;
+}

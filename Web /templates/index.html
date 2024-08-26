@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Human Fall Detection /& Alert System</title>
+    <link rel="stylesheet" type="text/css" href="static/css/index.css">
+    <!-- <link rel="stylesheet" href="home.css"> -->
+</head>
+
+<body>
+    <header>
+        <!--<h2 class="logo">Logo</h2>-->
+        <h2 class="logo"><img src="static/images/logo.png" alt="Logo"></h2>
+        <nav class="navigation">
+            <a href="#">Home</a>
+            <a href="{{url_for('info')}}">Info</a>
+            <a href="{{url_for('logout')}}" class="btn_Login_Popup" >Log Out</a>
+        </nav>
+    </header>
+    <main>
+        <div class="screen">
+            <img src="" id="video" alt="">
+        </div>
+        <div class="controls">
+            <a onclick="start_detection()">Start</a>
+            <a href="{{url_for('close')}}">Stop</a>
+        </div>
+    </main>
+
+    <script src="static/index.js"></script>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script> 
+    <script>
+        function start_detection() {
+            document.getElementById("video").src = "{{url_for ('video_feed')}}";          
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: black;
+}
+
+
+
+header {
+    border: 2px solid black;
+    box-shadow: 0px 0px 15px white;
+    margin: 8px 34px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 95%;
+    padding: 10px 59px;
+    background: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+    border-radius: 12px;
+}
+
+
+
+/* logo style for image */
+h2.logo {
+    text-align: center; /* Center the image horizontally */
+}
+
+h2.logo img {
+    width: 424px; /* Set the width of the image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Add rounded corners to the image */
+}
+
+/* design for class : navigation items */
+.navigation a{
+    position: relative;
+    font-size: 1.1em;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+/*create an underline effect on links within a class : navigation for links*/
+.navigation a::after{
+    content: '';
+    position:absolute;
+    width: 100%;
+    height: 3px;
+    left: 0;
+    bottom: -6px;
+    background: white;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform .5s;
+}
+
+.navigation a:hover:after{
+    transform-origin: left;
+    transform: scaleX(1);
+    
+}
+
+/* style for login button in class : navigation */
+.navigation .btn_Login_Popup:hover{
+    padding:10px;
+    background: red;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.4em;
+    color: white;
+    margin-left: 40px;
+    transition: .5s;
+}
+.navigation .btn_Login_Popup{
+    padding:10px;
+    background: white;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: black;
+    margin-left: 40px;
+    transition: .5s;
+}
+
+
+main{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 80vh;
+    width: 98%;
+    margin: 121px 21px 19px 16px;
+    border-radius: 20px;
+    background-color:white;
+    color: #162938;
+}
+
+.screen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 80%;
+    background-color: #162938;
+    border-radius: 20px;
+}
+.controls{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 20%;
+}
+
+.controls a{
+    text-decoration: none;
+    width: 70%;
+    height: 30%;
+    padding: 20px;
+    padding-top: 25%;
+    text-align: center;
+    background: black !important;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 1.5em;
+    font-weight: 500;
+    color: white;
+}
+
+.controls a:hover{
+    background: white !important;
+    color: black !important;
+    border: 3px solid;
+}
